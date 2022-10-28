@@ -1,0 +1,19 @@
+<p>list-all works!</p>
+<button type="submit" class="btn btn-primary" (click)="loadData()">Listar</button>
+
+
+<div *ngFor="let item of user">
+    <p>{{item.id}}</p>
+    <p>{{item.name}}</p>
+    <p>{{item.email}}</p>
+    <p>{{item.password}}</p>
+    <p>{{item.surname}}</p>
+
+    <!-- <button (click)="editar(item.id)" [routerlink]="[editar]">editar usuários</button> -->
+    <a [routerLink]="['/edit',item.id]" routerLinkActive="router-link-active" >editar</a>
+    
+    
+    <button type="submit" (click)="delete()"[routerLink]="[delete]">delete</button>
+</div>
+
+
